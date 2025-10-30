@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Your Name: experience, projects, and a contact form." />
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --card:#121829;
+      --text:#e8eefc;
+      --muted:#a9b3c9;
+      --accent:#6aa3ff;
+      --accent-2:#9b6bff;
+      --ok:#2ecc71;
+      --err:#ff6b6b;
+      --ring: rgba(106,163,255,.35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(106,163,255,.08), transparent 60%),
+                  radial-gradient(900px 600px at 110% 10%, rgba(155,107,255,.08), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    /* Layout */
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,15,26,0.85), rgba(11,15,26,0));backdrop-filter:saturate(180%) blur(10px);z-index:30}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+    nav a.logo{font-weight:800;letter-spacing:.3px;text-decoration:none;color:var(--text)}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav ul a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav ul a:hover{color:var(--text)}
+
+    /* Hero */
+    .hero{padding:72px 24px 24px}
+    .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 8px}
+    .hero p{color:var(--muted);max-width:60ch;margin:0}
+    .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid #253156;border-radius:999px;padding:6px 12px;margin-top:18px;color:var(--muted)}
+
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));border:1px solid #1a2138;border-radius:16px;padding:18px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Section headings */
+    section{padding:36px 24px}
+    section h2{font-size:24px;margin:0 0 12px}
+    .muted{color:var(--muted)}
+
+    /* Timeline */
+    .timeline{border-left:2px solid #253156;padding-left:14px;margin-left:6px}
+    .tl-item{position:relative;margin:16px 0}
+    .tl-item::before{content:"";position:absolute;left:-10px;top:4px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 4px rgba(106,163,255,.15)}
+    .tl-role{font-weight:700}
+    .tl-meta{color:var(--muted);font-size:14px}
+
+    /* Contact */
+    form{display:grid;gap:12px;max-width:640px}
+    .field{display:grid;gap:8px}
+    label{font-weight:600}
+    input, textarea{background:var(--card);border:1px solid #1a2138;color:var(--text);padding:12px;border-radius:12px;outline:none}
+    input:focus, textarea:focus{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
+    textarea{min-height:140px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+    .btn{appearance:none;border:0;border-radius:999px;padding:12px 16px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0f1a}
+    .btn:disabled{opacity:.7;cursor:not-allowed}
+
+    .status{font-size:14px}
+    .status.ok{color:var(--ok)}
+    .status.err{color:var(--err)}
+
+    footer{padding:48px 24px;color:var(--muted);text-align:center}
+
+    @media (max-width:640px){
+      .row{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="#top" class="logo">Your Name</a>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="intro-title">
+      <h1 id="intro-title">Hi, I'm <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">Your Name</span>.</h1>
+      <p>Full‑stack developer focused on building delightful, accessible web experiences. I enjoy type‑safe tooling, clean UI, and solving real-world problems.</p>
+      <div class="chip" aria-label="Current availability">
+        <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+        <span>Open to new opportunities</span>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-title">
+      <h2 id="exp-title">Experience</h2>
+      <p class="muted">Replace these with your roles. Keep it brief; highlight impact, not tasks.</p>
+      <div class="timeline" role="list">
+        <div class="tl-item" role="listitem">
+          <div class="tl-role">Senior Software Engineer · Awesome Co</div>
+          <div class="tl-meta">Jan 2023 — Present · Remote</div>
+          <p>Led migration to a modern stack, improving page load by 42% and boosting conversion by 9%.</p>
+        </div>
+        <div class="tl-item" role="listitem">
+          <div class="tl-role">Frontend Engineer · Cool Startup</div>
+          <div class="tl-meta">Aug 2020 — Dec 2022 · San Francisco, CA</div>
+          <p>Built a design system with 40+ components; cut UI defects by 30%.</p>
+        </div>
+        <div class="tl-item" role="listitem">
+          <div class="tl-role">Software Intern · University Lab</div>
+          <div class="tl-meta">Jun 2019 — Aug 2020 · Berkeley, CA</div>
+          <p>Prototyped ML‑powered dashboard for research metrics and publications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="proj-title">
+      <h2 id="proj-title">Selected Projects</h2>
+      <div class="grid">
+        <article class="card" aria-label="Project 1">
+          <h3>Project Name</h3>
+          <p>A short one‑liner about what it is and why it matters. <a href="#" style="color:var(--accent)">Live</a> · <a href="#" style="color:var(--accent)">Code</a></p>
+        </article>
+        <article class="card" aria-label="Project 2">
+          <h3>Another Project</h3>
+          <p>What did you build? What was the impact? Mention tech briefly.</p>
+        </article>
+        <article class="card" aria-label="Project 3">
+          <h3>Third Thing</h3>
+          <p>Keep it concise and outcomes‑oriented.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Me</h2>
+      <p class="muted">Use the form to send me a message. It will email me via EmailJS (no server required). A mail client fallback is provided if EmailJS isn't configured.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="ada@example.com" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="btn" id="sendBtn" type="submit">Send Message</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Your Name. All rights reserved.</div>
+  </footer>
+
+  <!-- EmailJS SDK (client-side email). Create a free account at https://www.emailjs.com/ -->
+  <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // ====== CONFIGURE THESE VALUES ======
+    // 1) Create an EmailJS account, add an Email Service & Email Template
+    // 2) Put your IDs below, then you're done. No server needed.
+    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";     // Example: "dC1X2yZ3..."
+    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";     // Example: "service_123abc"
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";   // Example: "template_45def"
+    const YOUR_EMAIL = "you@example.com";             // Used for mailto fallback only
+
+    const statusEl = document.getElementById('status');
+    const form = document.getElementById('contact-form');
+    const sendBtn = document.getElementById('sendBtn');
+
+    // Accessibility helpers
+    const setStatus = (msg, type = "") => {
+      statusEl.textContent = msg;
+      statusEl.className = `status ${type}`;
+    };
+
+    const validEmail = (value) => /.+@.+\..+/.test(String(value).toLowerCase());
+
+    const mailtoFallback = ({ name, email, message }) => {
+      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+      const body = encodeURIComponent(`${message}\n\nFrom: ${name} <${email}>`);
+      window.location.href = `mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}`;
+    };
+
+    const initEmailJS = () => {
+      if (window.emailjs && EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+        try { window.emailjs.init(EMAILJS_PUBLIC_KEY); return true; } catch(e){ return false; }
+      }
+      return false;
+    };
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      // Basic validation
+      if (!name || !email || !message) { setStatus('Please fill in all fields.', 'err'); return; }
+      if (!validEmail(email)) { setStatus('Please enter a valid email address.', 'err'); return; }
+
+      sendBtn.disabled = true; setStatus('Sending…');
+
+      const emailjsReady = initEmailJS();
+
+      if (emailjsReady) {
+        try {
+          const payload = { from_name: name, reply_to: email, message: message };
+          // Ensure your EmailJS template expects: from_name, reply_to, message
+          await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, payload);
+          setStatus('Message sent! I\'ll get back to you soon.', 'ok');
+          form.reset();
+        } catch (err) {
+          console.error(err);
+          setStatus('Could not send via EmailJS. Using mail app instead…', 'err');
+          mailtoFallback({ name, email, message });
+        } finally {
+          sendBtn.disabled = false;
+        }
+      } else {
+        // Fallback to the user's email client
+        setStatus('Opening your mail app…');
+        mailtoFallback({ name, email, message });
+        sendBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
